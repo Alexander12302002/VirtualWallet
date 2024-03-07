@@ -14,17 +14,17 @@ body{
     height: 100vh;    
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-template-areas: 
     "logo logo logo logo logo"
     "user user user user user"
     "user user user user user"
     "savings savings assets assets ."
-    "card card card card card"
-    ". . . . ."
-    ". . . . ."
-    ". . . . ."
-    ". . . . ."
+    "menu menu menu menu menu"
+    "card card card card card"  
+    "trans trans trans trans trans"
+    "trans trans trans trans trans"
+    "pega pega pega pega pega"
     ;
 }
 
@@ -84,6 +84,7 @@ body{
 
 .ganancias{
     padding-top: 5px;
+    padding-bottom: 10px;
     width: 145%;
     display: flex;
     align-items: center;
@@ -128,27 +129,32 @@ progress[value] {
 }
 
 .menu_blanco{
-    margin-top: 15px;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    grid-area: card;
+    grid-area: menu;
     width: 100%;
+    height: 120%;
     background: var(--color-ternario);
 }
 
-.activities{
-    margin-top: 50px;
+.item_5{
+    grid-area: card;
+    height: 200px;
+    display: flex;
+    background-color: var(--color-ternario);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item_5 .activities{
+    margin-top: -40px;
     margin-left: 25px;
-    font-size: 30px;
+    font-size: 45px;
     font-family: "SF-Pro-Text-Bold";
 }
 
-/* .item_5{
-    margin-left: 25px;
-    margin-top: 5px;
-} */
-
 .cards{
+    background-color: var(--color-ternario);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -171,6 +177,47 @@ progress[value] {
     margin-top: 10px;
 }
 
+.Transactions{  
+    margin-left: 25px;
+    font-size: 30px;
+    font-family: "SF-Pro-Text-Bold";
+}
+
+.item_6 {
+    grid-area: trans;
+    background: var(--color-ternario);
+    margin-top: -4px;
+}
+
+.Transactions{
+    font-size: 45px;
+    font-family: "SF-Pro-Text-Bold";
+}
+
+.compras img{
+    width: 100%;
+}
+
+
+.item_7{
+    background: var(--color-primario);
+    margin-top: 1px;
+    height: 100%;
+    grid-area: pega;
+}
+
+.item_7 .menu_pegajoso{
+    display: flex;
+    height: 100%;
+}
+
+.item_7 .menu_pegajoso img{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 
 
 }
