@@ -32,6 +32,12 @@ body{
     position: absolute;
 }
 
+.banner img{
+    width: 100%;
+    height: 105vh;
+    object-fit: cover;
+}
+
 .item_1{
     grid-area: logo;
     display: flex;
@@ -186,7 +192,6 @@ progress[value] {
 .item_6 {
     grid-area: trans;
     background: var(--color-ternario);
-    margin-top: -4px;
 }
 
 .Transactions{
@@ -202,18 +207,24 @@ progress[value] {
 .item_7{
     background: var(--color-primario);
     margin-top: 1px;
-    height: 100%;
     grid-area: pega;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
 }
 
 .item_7 .menu_pegajoso{
     display: flex;
     height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .item_7 .menu_pegajoso img{
     display: flex;
-    height: 100%;
+    width: 40px;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
