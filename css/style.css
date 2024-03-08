@@ -22,9 +22,9 @@ body{
     "savings savings assets assets ."
     "menu menu menu menu menu"
     "card card card card card"  
-    "trans trans trans trans trans"
-    "trans trans trans trans trans"
-    "pega pega pega pega pega"
+    "card card card card card" 
+    "card card card card card" 
+    "card card card card card" 
     ;
 }
 
@@ -145,7 +145,7 @@ progress[value] {
 
 .item_5{
     grid-area: card;
-    height: 200px;
+    height: 370px;
     display: flex;
     background-color: var(--color-ternario);
     flex-direction: column;
@@ -189,20 +189,53 @@ progress[value] {
     font-family: "SF-Pro-Text-Bold";
 }
 
-.item_6 {
-    grid-area: trans;
-    background: var(--color-ternario);
-}
-
 .Transactions{
+    margin-top: 10px;
     font-size: 45px;
     font-family: "SF-Pro-Text-Bold";
 }
-
-.compras img{
-    width: 100%;
+.item_6 {
+    grid-area: trans;
+    background: var(--color-ternario);
+    height: 105vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 15px
 }
 
+
+.item_6 img{
+    width: 50px;
+    height: 50px;
+}
+
+.compras_cards_items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.compra_descripcion,
+div.compra_valor{
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+div.compra_descripcion{
+    align-items: flex-start;
+}
+div.compra_valor{
+    align-items: flex-end;
+}
+
+.imagen_mas_texto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .item_7{
     background: var(--color-primario);
