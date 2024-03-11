@@ -7,22 +7,43 @@
     font-family: "SF-Pro-Text-Regular";
 }
 
-@media (width <= 800px) {
-body{
-    background:var(--color-primario) ;
+
+.header{
+    background: var(--color-primario);
     width: 100%;
-    height: 100vh;    
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-areas: 
-    "logo logo logo logo logo"
-    "user user user user user"
-    "user user user user user"
-    "savings savings assets assets ."
-    "menu menu menu menu menu"
-    "card card card card card"  
-    ;
+    padding: 0 .5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+.header__logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.logo__icono img{
+    width: 3em;
+}
+.logo__titulo{
+    color: var(--color-ternario);
+    font-family: "SF-Pro-Text-Bold";
+    text-transform: uppercase;
+}
+
+.header__menu i{
+    font-size: 3em;
+    color: var(--color-ternario);
+}
+
+body{
+    background: var(--color-primario);
 }
 
 .banner{
@@ -35,63 +56,55 @@ body{
     object-fit: cover;
 }
 
+.main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "user"
+    "ganancias"
+    "menu"
+    "menu"
+    "menu"
+    ;
+}
+
+
 .item_1{
-    grid-area: logo;
-    display: flex;
-    font-size: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 0 0 10px;
-}
-
-.item_1 .logo_nombre{
-    display: flex;
-    align-items: center;
-}
-
-.item_1 .logo_nombre img{
-    width: 30px;
-    padding-right: 5px;
-}
-
-.item_1 .logo_nombre h1{
-    width: 25px;
-    color: var(--color-ternario);
-}
-
-.item_1 .menu{
-    display: flex;
-    align-items: center;
-}
-
-.item_1 .menu img{
-    width: 30px;
-    padding-right: 5px;
-}
-
-.item_2{
     grid-area: user;
     display: flex;
     color: var(--color-ternario);
     align-items: center;
+    padding-top: 60px;
     padding-left: 15px;
 }
-.item_2 .nombre_user h1{
+.item_1 .nombre_user h1{
     font-family: "SF-Pro-Text-Heavy";
     font-size: 40px;
 }
-.item_2 .nombre_user p{
+.item_1 .nombre_user p{
     font-family: "SF-Pro-Text-Light";
     font-size: 30px;
 }
 
+
 .ganancias{
-    padding-top: 5px;
-    padding-bottom: 10px;
-    width: 145%;
+    grid-area: ganancias;
+    padding-top: 20px;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+}
+
+.item_2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding-left: 15px;
+    grid-template-areas: 
+    "savings assets"
+    ;
 }
 
 .item_3{
@@ -131,33 +144,29 @@ progress[value] {
     background: var(--color-cuarto);
 }
 
-.menu_blanco{
+.menu{
+    margin-top: 30px;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     grid-area: menu;
     width: 100%;
-    height: 120%;
     background: var(--color-ternario);
 }
 
+
 .item_5{
-    grid-area: card;
-    height: 370px;
     display: flex;
-    background-color: var(--color-ternario);
     flex-direction: column;
-    justify-content: center;
 }
 
-.item_5 .activities{
-    margin-top: -40px;
+.item_5 h6{
+    margin-top: 20px;
     margin-left: 25px;
-    font-size: 45px;
+    font-size: 35px;
     font-family: "SF-Pro-Text-Bold";
 }
 
 .cards{
-    background-color: var(--color-ternario);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -180,24 +189,18 @@ progress[value] {
     margin-top: 10px;
 }
 
-.Transactions{  
+
+.item_6 h6{  
+    margin-top: 20px;
     margin-left: 25px;
-    font-size: 30px;
+    font-size: 35px;
     font-family: "SF-Pro-Text-Bold";
 }
 
-.Transactions{
-    margin-top: 10px;
-    font-size: 45px;
-    font-family: "SF-Pro-Text-Bold";
-}
 .item_6 {
-    grid-area: trans;
     background: var(--color-ternario);
-    height: 105vh;
     display: flex;
     flex-direction: column;
-    gap: 15px
 }
 
 
@@ -210,11 +213,9 @@ progress[value] {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 100px;
 }
 
 .compras_cards_items{
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -240,31 +241,21 @@ div.compra_valor{
     align-items: center;
 }
 
-.item_7{
-    background: var(--color-primario);
-    margin-top: 1px;
-    grid-area: pega;
+
+footer{
     width: 100%;
-    height: 80px;
+    background: var(--color-primario);
     position: fixed;
     bottom: 0;
 }
-
-.item_7 .menu_pegajoso{
+footer ul {
     display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
     justify-content: space-around;
 }
-
-.item_7 .menu_pegajoso img{
-    display: flex;
-    width: 40px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+footer ul li {
+    list-style: none;
+    margin: .5em 0;
 }
-
-
+footer ul li a img{
+    width: 2em;
 }
